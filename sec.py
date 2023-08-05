@@ -8,7 +8,7 @@ import random
 swfdump_path = "path/to/swfdump"
 lokal_as_dosya_yolu = "test.as"
 internet_url = "URL_TO_REMOTE_CHECK_AS_FILE"
-swf_exe_yolu = "path/to/Badmice.exe"
+swf_exe_yolu = "path/to/test.exe"
 
 def dosya_md5_hash_hesapla(dosya_yolu):
     hasher = hashlib.md5()
@@ -33,7 +33,7 @@ while True:
     suanki_lokal_hash = dosya_md5_hash_hesapla(lokal_as_dosya_yolu)
     if suanki_lokal_hash != onceki_lokal_hash:
         print("Dosya değiştirilmiş. Bağlantı kesiliyor.")
-        subprocess.run(["taskkill", "/f", "/im", "Badmice.exe"])
+        subprocess.run(["taskkill", "/f", "/im", "test.exe"])
     os.remove(lokal_as_dosya_yolu)
     os.remove("check.as")
 
