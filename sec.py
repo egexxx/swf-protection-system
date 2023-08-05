@@ -27,7 +27,7 @@ while True:
     bekleme_suresi = random.randint(300, 900) 
     print(f"Kontrol yapılıyor. {bekleme_suresi} saniye sonra bir sonraki kontrol yapılacak.")
     time.sleep(bekleme_suresi)
-    subprocess.run([swfdump_path, "badmice.swf", "-a", "-o", lokal_as_dosya_yolu])
+    subprocess.run([swfdump_path, "test.swf", "-a", "-o", lokal_as_dosya_yolu])
     onceki_lokal_hash = dosya_md5_hash_hesapla(lokal_as_dosya_yolu)
     internetten_dosya_indir(internet_url, "check.as")
     suanki_lokal_hash = dosya_md5_hash_hesapla(lokal_as_dosya_yolu)
